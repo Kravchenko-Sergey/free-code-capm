@@ -46,3 +46,12 @@ const largestOfFour = arr => {
 largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]])
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const confirmEnding = (str, target) => {
+    const res = str.slice(str.length - target.length, str.length)
+    return res === target ? true : false
+}
+
+confirmEnding("Bastian", "n")
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
