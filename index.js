@@ -19,3 +19,18 @@ const factorialize = num => {
 }
 
 factorialize(5)
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function findLongestWordLength(str) {
+    let res = 0
+    const arr = str.split(' ')
+    arr.forEach((word) => {
+        if(word.length > res) res = word.length
+    })
+    return res
+}
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog")
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
