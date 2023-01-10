@@ -9,3 +9,13 @@ const reverseString = str => [...str].reverse().join('')
 reverseString("hello")
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const factorialize = num => {
+    let res = 1
+    for(let i = 2; i <= num; i++) {
+        res = res * i
+    }
+    return res
+}
+
+factorialize(5)
