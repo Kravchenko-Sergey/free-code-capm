@@ -67,3 +67,15 @@ const repeatStringNumTimes = (str, num) => {
 repeatStringNumTimes("abc", 3)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const truncateString = (str, num) => {
+    if(str.length > num) {
+        const str2 = str.slice(0, num)
+        return `${str2}...`
+    }
+    return str
+}
+
+truncateString("A-tisket a-tasket A green and yellow basket", 8)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
