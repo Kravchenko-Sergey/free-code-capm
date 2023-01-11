@@ -79,3 +79,16 @@ const truncateString = (str, num) => {
 truncateString("A-tisket a-tasket A green and yellow basket", 8)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const findElement = (arr, func) => {
+    const res = []
+    arr.forEach(num => {
+        if(func(num)) res.push(num)
+    })
+    return res[0]
+}
+
+findElement([1, 2, 3, 4], num => num % 2 === 0)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
