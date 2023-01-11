@@ -162,3 +162,14 @@ const mutation = arr => {
 mutation(["Mary", "Aarmy"])
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const chunkArrayInGroups = (arr, size) => {
+    const res = [];
+    for (let i = 0; i < arr.length; i += size) {
+        const chunk = arr.slice(i, i + size)
+        res.push(chunk)
+    }
+    return res
+}
+
+chunkArrayInGroups(["a", "b", "c", "d"], 2)
