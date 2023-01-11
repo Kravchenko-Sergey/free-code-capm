@@ -107,3 +107,14 @@ const titleCase = str => {
 titleCase("I'm a little tea pot")
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const frankenSplice = (arr1, arr2, n) => {
+    const arr1Copy = JSON.parse(JSON.stringify(arr1))
+    const arr2Copy = JSON.parse(JSON.stringify(arr2))
+    arr2Copy.splice(n, 0, ...arr1Copy)
+    return arr2Copy
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
