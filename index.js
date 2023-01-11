@@ -134,3 +134,31 @@ const getIndexToIns = (arr, num) => {
 getIndexToIns([40, 60], 50)
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const mutation = arr => {
+    const el1 = arr[0].toLowerCase().split('')
+    const el2 = arr[1].toLowerCase().split('')
+    const res = []
+    for(let i = 0; i < el1.length; i++) {
+        for(let j = 0; j <= el1.length; j++) {
+            if(el1[i] === el2[j]) res.push(el1[i])
+        }
+    }
+    res.sort((a, b) => {
+        if(a > b) return 1
+        if(a < b) return -1
+        return 0
+    })
+    el2.sort((a, b) => {
+        if(a > b) return 1
+        if(a < b) return -1
+        return 0
+    })
+    const resSet = new Set(res)
+    const el2Set = new Set(el2)
+    return [...resSet].join('') === [...el2Set].join('') ? true : false
+}
+
+mutation(["Mary", "Aarmy"])
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
