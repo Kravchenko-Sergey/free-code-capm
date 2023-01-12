@@ -240,3 +240,27 @@ const isEveryoneHere = userObj => {
 console.log(isEveryoneHere(users))
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const users = {
+    Alan: {
+        online: false
+    },
+    Jeff: {
+        online: true
+    },
+    Sarah: {
+        online: false
+    }
+}
+
+const countOnline = usersObj => {
+    let countUsers = 0
+    for(let user in usersObj) {
+        if(usersObj[user].online === true) countUsers += 1
+    }
+    return countUsers
+}
+
+console.log(countOnline(users))
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
