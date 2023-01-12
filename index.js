@@ -264,3 +264,28 @@ const countOnline = usersObj => {
 console.log(countOnline(users))
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let users = {
+    Alan: {
+        age: 27,
+        online: false
+    },
+    Jeff: {
+        age: 32,
+        online: true
+    },
+    Sarah: {
+        age: 48,
+        online: false
+    },
+    Ryan: {
+        age: 19,
+        online: true
+    }
+}
+
+const getArrayOfUsers = obj => Object.keys(obj)
+
+console.log(getArrayOfUsers(users))
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
