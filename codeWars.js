@@ -30,4 +30,6 @@ const checkExam = (array1, array2) => {
     return res < 0 ? 0 : res
 }
 
-////////////////////////////////////////////////////////////////////////////////////////
+//get character from ASCII Value
+
+const getChar = c => String.fromCharCode(c)
