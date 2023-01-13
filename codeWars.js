@@ -33,3 +33,14 @@ const checkExam = (array1, array2) => {
 //get character from ASCII Value
 
 const getChar = c => String.fromCharCode(c)
+
+//Grasshopper - Grade book
+
+const getGrade = (s1, s2, s3) => {
+    const res = (s1 + s2 + s3) / 3
+    if(res >= 90 && res <= 100) return 'A'
+    if(res >= 80 && res <= 90) return 'B'
+    if(res >= 70 && res <= 80) return 'C'
+    if(res >= 60 && res <= 70) return 'D'
+    if(res >= 0 && res <= 60) return 'F'
+}
