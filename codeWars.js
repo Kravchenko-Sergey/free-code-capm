@@ -65,3 +65,7 @@ const bmi = (weight, height) => {
     if(bmi > 25 && bmi <= 30) return 'Overweight'
     return 'Obese'
 }
+
+//Exclamation marks series #1: Remove an exclamation mark from the end of string
+
+const remove = str => str.at(-1) === '!' ? str.slice(0, -1) : str
