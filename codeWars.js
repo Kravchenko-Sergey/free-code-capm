@@ -44,3 +44,14 @@ const getGrade = (s1, s2, s3) => {
     if(res >= 60 && res <= 70) return 'D'
     if(res >= 0 && res <= 60) return 'F'
 }
+
+//Lario and Muigi Pipe Problem
+
+const pipeFix = numbers => {
+    const res = []
+    const sortNumbers = numbers.sort((a, b) => a - b)
+    for(let i = sortNumbers[0]; i <= sortNumbers[sortNumbers.length - 1]; i++) {
+        res.push(i)
+    }
+    return res
+}
