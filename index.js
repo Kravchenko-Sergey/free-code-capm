@@ -431,3 +431,13 @@ function Dog(name, color) {
 }
 
 const terrier = new Dog('Barsik', 'red')
+
+//Verify an Object's Constructor with instanceof
+
+function House(numBedrooms) {
+    this.numBedrooms = numBedrooms;
+}
+
+const myHouse = new House(5)
+
+myHouse instanceof House
