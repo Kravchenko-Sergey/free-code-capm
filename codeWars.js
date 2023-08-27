@@ -82,3 +82,9 @@ const whatday = num => {
     if(num === 7) return 'Saturday'
     return 'Wrong, please enter a number between 1 and 7'
 }
+
+//Is integer safe to use?
+
+export function SafeInteger(n) {
+    return Number.isSafeInteger(n)
+}
