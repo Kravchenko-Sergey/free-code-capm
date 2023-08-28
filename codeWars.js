@@ -88,3 +88,9 @@ const whatday = num => {
 export function SafeInteger(n) {
     return Number.isSafeInteger(n)
 }
+
+//isReallyNaN
+
+export function isReallyNaN (val) {
+    return Number.isNaN(val)
+};
