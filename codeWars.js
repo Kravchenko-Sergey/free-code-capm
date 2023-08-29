@@ -93,4 +93,19 @@ export function SafeInteger(n) {
 
 export function isReallyNaN (val) {
     return Number.isNaN(val)
-};
+}
+
+//How many stairs will Suzuki climb in 20 years?
+
+export function stairsIn20(stairs) {
+    let oneYearTotal = 0
+
+    stairs.forEach((day) => {
+        const dayTotal = day.reduce((acc, curr) => acc + curr, 0)
+        oneYearTotal += dayTotal
+    })
+
+    const twentyYearEstimate = oneYearTotal * 20
+
+    return twentyYearEstimate
+}
