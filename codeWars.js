@@ -109,3 +109,25 @@ export function stairsIn20(stairs) {
 
     return twentyYearEstimate
 }
+
+//L1: Bartender, drinks!
+
+export function getDrinkByProfession(profession){
+    profession = profession.toLowerCase();
+    let drink = "";
+
+    const switchObj = {
+        jabroni: "Patron Tequila",
+        "school counselor": "Anything with Alcohol",
+        programmer: "Hipster Craft Beer",
+        "bike gang member": "Moonshine",
+        politician: "Your tax dollars",
+        rapper: "Cristal",
+    };
+
+    const defaultDrink = "Beer";
+
+    drink = switchObj[profession] || defaultDrink;
+
+    return drink;
+}
