@@ -146,3 +146,17 @@ export function expressionsMatter(a, b, c) {
 
     return Math.max(...expressions);
 }
+
+//Deodorant Evaporator
+
+export function evaporator(content, evapPerDay, threshold) {
+    let days = 0;
+    let gas_left = 1.0;
+
+    while (gas_left > threshold / 100) {
+        gas_left -= gas_left * (evapPerDay / 100);
+        days++;
+    }
+
+    return days;
+}
