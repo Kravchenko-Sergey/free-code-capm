@@ -160,3 +160,18 @@ export function evaporator(content, evapPerDay, threshold) {
 
     return days;
 }
+
+// What's my golf score?
+
+export function golfScoreCalculator(parList, scoreList) {
+    let totalScore = 0;
+
+    for (let i = 0; i < parList.length; i++) {
+        const holePar = parseInt(parList[i]);
+        const holeScore = parseInt(scoreList[i]);
+
+        totalScore += holeScore - holePar;
+    }
+
+    return totalScore;
+}
