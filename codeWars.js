@@ -191,3 +191,21 @@ export function findEvenIndex(arr)
 
     return -1;
 }
+
+// Build a pile of Cubes
+
+export function findNb(m) {
+    let n = 1;
+    let volume = 0;
+
+    while (volume < m) {
+        volume += Math.pow(n, 3);
+        n += 1;
+    }
+
+    if (volume === m) {
+        return n - 1;
+    } else {
+        return -1;
+    }
+}
