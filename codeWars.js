@@ -209,3 +209,22 @@ export function findNb(m) {
         return -1;
     }
 }
+
+// Buying a car
+
+export function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth) {
+    let months = 0;
+    let savings = 0;
+
+    while (startPriceOld + savings < startPriceNew) {
+        months += 1;
+        if (months % 2 === 0) {
+            percentLossByMonth += 0.5;
+        }
+        startPriceOld *= 1 - percentLossByMonth / 100;
+        startPriceNew *= 1 - percentLossByMonth / 100;
+        savings += savingperMonth;
+    }
+
+    return [months, Math.round(startPriceOld + savings - startPriceNew)];
+}
