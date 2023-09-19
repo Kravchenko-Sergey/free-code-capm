@@ -228,3 +228,7 @@ export function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLo
 
     return [months, Math.round(startPriceOld + savings - startPriceNew)];
 }
+
+// Array.diff
+
+const arrayDiff = (a, b) => a.filter(value => !b.includes(value));
