@@ -232,3 +232,30 @@ export function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLo
 // Array.diff
 
 const arrayDiff = (a, b) => a.filter(value => !b.includes(value));
+
+// Search for letters
+
+export function change(string){
+    const alphabet = 'abcdefghijklmnopqrstuvwxyz';
+    let result = '';
+
+    for (let char of alphabet) {
+        if (string.toLowerCase().includes(char)) {
+            result += '1';
+        } else {
+            result += '0';
+        }
+    }
+
+    return result;
+}
+
+// Tail Swap
+
+export function tailSwap(arr) {
+
+    let [firstStart, firstEnd] = arr[0].split(':');
+    let [secondStart, secondEnd] = arr[1].split(':');
+
+    return [`${firstStart}:${secondEnd}`, `${secondStart}:${firstEnd}`];
+}
