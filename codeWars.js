@@ -259,3 +259,7 @@ export function tailSwap(arr) {
 
     return [`${firstStart}:${secondEnd}`, `${secondStart}:${firstEnd}`];
 }
+
+// Evens and Odds
+
+export const evensAndOdds = n => n % 2 === 0 ? n.toString(2) : n.toString(16);
