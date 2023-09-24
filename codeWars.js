@@ -263,3 +263,15 @@ export function tailSwap(arr) {
 // Evens and Odds
 
 export const evensAndOdds = n => n % 2 === 0 ? n.toString(2) : n.toString(16);
+
+// Area of a Circle
+
+export const circleArea = radius => {
+    if (radius <= 0) {
+        throw new Error("Radius must be positive!");
+    }
+
+    const area = Math.PI * Math.pow(radius, 2);
+    return parseFloat(area.toFixed(2));
+    return 0;
+}
