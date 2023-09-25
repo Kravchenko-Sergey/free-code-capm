@@ -275,3 +275,21 @@ export const circleArea = radius => {
     return parseFloat(area.toFixed(2));
     return 0;
 }
+
+// Computer problem series #1: Fill the Hard Disk Drive
+
+export function save(sizes, hd) {
+    let totalSize = 0;
+    let count = 0;
+
+    for (let size of sizes) {
+        if (totalSize + size <= hd) {
+            totalSize += size;
+            count++;
+        } else {
+            break;
+        }
+    }
+
+    return count;
+}
