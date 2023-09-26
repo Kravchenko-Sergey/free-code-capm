@@ -293,3 +293,43 @@ export function save(sizes, hd) {
 
     return count;
 }
+
+// Reverse or rotate?
+
+export function revRot(s, sz) {
+    if (sz <= 0 || s.length === 0 || sz > s.length) {
+        return "";
+    }
+
+    const chunkCount = Math.floor(s.length / sz);
+    let result = "";
+
+    for (let i = 0; i < chunkCount; i++) {
+        const chunk = s.slice(i * sz, (i + 1) * sz);
+
+        if (isSumOfCubesDivisibleBy2(chunk)) {
+            result += reverseString(chunk);
+        } else {
+            result += rotateLeft(chunk);
+        }
+    }
+
+    return result;
+}
+
+function isSumOfCubesDivisibleBy2(str) {
+    let sum = 0;
+    for (const digit of str) {
+        const num = parseInt(digit);
+        sum += num * num * num;
+    }
+    return sum % 2 === 0;
+}
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+function rotateLeft(str) {
+    return str.slice(1) + str[0];
+}
