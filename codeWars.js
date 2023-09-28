@@ -333,3 +333,20 @@ function reverseString(str) {
 function rotateLeft(str) {
     return str.slice(1) + str[0];
 }
+
+// Incrementer
+
+export function incrementer(nums) {
+    if (nums.length === 0) {
+        return [];
+    }
+
+    const result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        const incrementedDigit = (nums[i] + i + 1) % 10;
+        result.push(incrementedDigit);
+    }
+
+    return result;
+}
