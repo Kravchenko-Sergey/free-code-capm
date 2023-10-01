@@ -365,3 +365,16 @@ export function seven(m) {
 
     return [m, steps];
 }
+
+// Beginner Series #3 Sum of Numbers
+
+export function getSum(a, b) {
+    if (a > b) {
+        [a, b] = [b, a];
+    }
+
+    const numberOfTerms = b - a + 1;
+    const sum = (numberOfTerms * (a + b)) / 2;
+
+    return sum;
+}
