@@ -378,3 +378,21 @@ export function getSum(a, b) {
 
     return sum;
 }
+
+// PI approximation
+
+export function iterPi(epsilon) {
+    let approximation = 0;
+    let iterations = 0;
+    let sign = 1;
+    let divisor = 1;
+
+    while (Math.abs(approximation * 4 - Math.PI) >= epsilon) {
+        approximation += sign * (1 / divisor);
+        sign *= -1;
+        divisor += 2;
+        iterations++;
+    }
+
+    return [iterations, parseFloat((approximation * 4).toFixed(10))];
+}
