@@ -396,3 +396,16 @@ export function iterPi(epsilon) {
 
     return [iterations, parseFloat((approximation * 4).toFixed(10))];
 }
+
+// Summing a number's digits
+
+export function sumDigits(n) {
+    n = Math.abs(n);
+    const numStr = n.toString();
+    let digitSum = 0;
+    for (let i = 0; i < numStr.length; i++) {
+        digitSum += parseInt(numStr[i]);
+    }
+
+    return digitSum;
+}
