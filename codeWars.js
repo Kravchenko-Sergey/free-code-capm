@@ -409,3 +409,29 @@ export function sumDigits(n) {
 
     return digitSum;
 }
+
+// Are they the "same"?
+
+export function comp(a1, a2) {
+    if (a1 === null || a2 === null) {
+        return false;
+    }
+
+    const counts = {};
+
+    for (const num of a1) {
+        counts[num] = (counts[num] || 0) + 1;
+    }
+
+    for (const num of a2) {
+        const sqrtNum = Math.sqrt(num);
+
+        if (!Number.isInteger(sqrtNum) || !counts[sqrtNum]) {
+            return false;
+        }
+
+        counts[sqrtNum]--;
+    }
+
+    return true;
+}
