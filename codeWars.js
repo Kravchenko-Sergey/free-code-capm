@@ -435,3 +435,36 @@ export function comp(a1, a2) {
 
     return true;
 }
+
+// Prize Draw
+
+export function rank(st, we, n) {
+    if (st === "") {
+        return "No participants";
+    }
+
+    const names = st.split(",");
+
+    if (n > names.length) {
+        return "Not enough participants";
+    }
+
+    const calculateWinningNumber = (name) => {
+        const charCodeA = 'A'.charCodeAt(0);
+        const nameUpperCase = name.toUpperCase();
+        const nameLength = name.length;
+        const charSum = nameUpperCase.split('').reduce((sum, char) => sum + char.charCodeAt(0) - charCodeA + 1, 0);
+        return (charSum + nameLength) * we[names.indexOf(name)];
+    };
+
+    const sortedNames = names.sort((a, b) => {
+        const diff = calculateWinningNumber(b) - calculateWinningNumber(a);
+        if (diff !== 0) {
+            return diff;
+        } else {
+            return a.localeCompare(b);
+        }
+    });
+
+    return sortedNames[n - 1];
+}
