@@ -468,3 +468,15 @@ export function rank(st, we, n) {
 
     return sortedNames[n - 1];
 }
+
+// Help Bob count letters and digits.
+
+export function countLettersAndDigits(input) {
+    let count = 0;
+    for (const char of input) {
+        if (/^[0-9a-zA-Z]+$/.test(char)) {
+            count++;
+        }
+    }
+    return count;
+}
