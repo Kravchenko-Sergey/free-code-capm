@@ -480,3 +480,32 @@ export function countLettersAndDigits(input) {
     }
     return count;
 }
+
+// Help the bookseller !
+
+export const stockList = (listOfArt, listOfCat) => {
+    if (listOfArt.length === 0 || listOfCat.length === 0) {
+        return "";
+    }
+
+    const categoryTotals = {};
+
+    for (const code of listOfArt) {
+        const [codeStr, quantityStr] = code.split(" ");
+        const category = codeStr[0];
+        const quantity = parseInt(quantityStr, 10);
+
+        if (categoryTotals[category]) {
+            categoryTotals[category] += quantity;
+        } else {
+            categoryTotals[category] = quantity;
+        }
+    }
+
+    const result = listOfCat.map((category) => {
+        const total = categoryTotals[category] || 0;
+        return `(${category} : ${total})`;
+    });
+
+    return result.join(" - ");
+}
