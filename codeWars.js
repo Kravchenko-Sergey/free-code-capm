@@ -509,3 +509,19 @@ export const stockList = (listOfArt, listOfCat) => {
 
     return result.join(" - ");
 }
+
+// Split The Bill
+
+export function splitTheBill(x) {
+    let totalSpent = 0;
+    for (const person in x) {
+        totalSpent += x[person];
+    }
+    const fairShare = totalSpent / Object.keys(x).length;
+    const result = {};
+    for (const person in x) {
+        const amountOwed = x[person] - fairShare;
+        result[person] = Math.round(amountOwed * 100) / 100;
+    }
+    return result;
+}
