@@ -525,3 +525,9 @@ export function splitTheBill(x) {
     }
     return result;
 }
+
+// isReallyNaN
+
+export function isReallyNaN (val) {
+    return typeof val === 'number' && isNaN(val);
+}
